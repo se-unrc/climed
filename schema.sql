@@ -1,4 +1,4 @@
-﻿CREATE SEQUENCE seq_id_convenio;
+CREATE SEQUENCE seq_id_convenio;
 DROP TABLE IF EXISTS convenio;
 CREATE TABLE  convenio (
   id integer NOT NULL DEFAULT NEXTVAL('seq_id_convenio'),
@@ -7,7 +7,18 @@ CREATE TABLE  convenio (
   obra_social varchar(30) NOT NULL,
   cobertura float NOT NULL,
   Constraint pkConvenio PRIMARY KEY (id)
- ) ;
+);
+
+
+DROP TABLE if EXISTS ObraSocial;
+CREATE TABLE  ObraSocial (
+  numero integer NOT NULL ,
+  nombre varchar(30) NOT NULL,
+  direccion varchar(50) NOT NULL,
+  telefono varchar(25) NOT NULL,
+  cuit varchar(13) NOT NULL,
+  CONSTRAINT pkObraSocial PRIMARY KEY (numero)
+);
 
 
 CREATE SEQUENCE seq_id_medicamento;
