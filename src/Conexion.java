@@ -12,6 +12,7 @@ public class Conexion {
 	private final String password = "climed";
 	private static Connection conexion;
 	private String baseDeDatos = url + "/" + bd;
+	private final String urlBDPostgres = url+"/postgres";
 	
 	public synchronized static Connection getInstancia(){
 		if (instancia == null)
@@ -31,7 +32,7 @@ public class Conexion {
 			System.out.println("Creando la base de datos " + bd);
 			Statement st;
 			try {
-				conexion = DriverManager.getConnection(url, usuario, password);
+				conexion = DriverManager.getConnection(urlBDPostgres, usuario, password);
 				st = conexion.createStatement();
 				st.executeUpdate("CREATE DATABASE " + bd);
 				conexion.close();
