@@ -8,8 +8,8 @@ public class Conexion {
 	private static final String driver = "org.postgresql.Driver";
 	private final String url = "jdbc:postgresql://localhost:5432";
 	private final String bd = "climed_bd";
-	private final String usuario = "climed";
-	private final String password = "climed";
+	private final String usuario = "postgres";
+	private final String password = "root";
 	private static Connection conexion;
 	private String baseDeDatos = url + "/" + bd;
 	private final String urlBDPostgres = url+"/postgres";
@@ -27,8 +27,7 @@ public class Conexion {
 		try{
 			Class.forName(driver);
 			conexion = DriverManager.getConnection(baseDeDatos, usuario, password);
-		}
-		catch(SQLException E){
+		}catch(SQLException E){
 			System.out.println("Creando la base de datos " + bd);
 			Statement st;
 			try {
@@ -38,18 +37,19 @@ public class Conexion {
 				conexion.close();
 
 				conexion = DriverManager.getConnection(baseDeDatos, usuario, password);
-			} catch (SQLException e) {
+			}catch (SQLException e) {
 				System.out.println("Fallo de conexion");
 				e.printStackTrace();
 			}
-		}
-		catch(ClassNotFoundException E){
+		}catch(ClassNotFoundException E){
+			E.printStackTrace();
 			System.out.println("Driver incorrecto");
 		}
 	}
 
-	public void cerrarConexion(){
+	public static void cerrarConexion(){
 		try {
+			instancia = null;
 			conexion.close();
 		} catch (SQLException e) {
 			System.out.println("Fallo al cerrar");
