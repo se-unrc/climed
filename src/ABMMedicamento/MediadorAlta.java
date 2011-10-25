@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import Dominio.Medicamento;
 
 /**
  * @author grupo1

@@ -1,4 +1,4 @@
-package medicamentos;
+package Dominio;
 
 import java.util.Date;
 

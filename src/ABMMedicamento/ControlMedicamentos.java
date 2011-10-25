@@ -3,6 +3,7 @@ package ABMMedicamento;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.util.Vector;
+import Dominio.*;
 
 /**
  * @author grupo1

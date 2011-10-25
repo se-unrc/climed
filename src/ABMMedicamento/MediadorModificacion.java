@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ABMMedicamento;
 
 import java.awt.event.ActionEvent;
@@ -12,10 +8,11 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import Dominio.Medicamento;
 
 /**
  *
- * @author OctiCoCo
+ * @author grupo1
  */
 public class MediadorModificacion implements ActionListener{
 
