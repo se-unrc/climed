@@ -9,17 +9,15 @@ import java.util.Vector;
  */
 public class ControlMedicamentos {
 
-    private util_conxionBDPostgres.conexionBD conexion = util_conxionBDPostgres.conexionBD.getInstance("localhost", "climed", "postgres", "root");
+    private ControlConexion conexion = new ControlConexion();
 
     public Vector<Medicamento> getAll(){
         Vector<Medicamento> medicamentos = new Vector();
         ResultSet res = conexion.ejecutarSentencia("Select * from climed.medicamento");
         try {
             while (res.next()){
-                // public Medicamento(int id, String codigo, String nombre, int stock, int stock_min, Date vencimiento) {
                 Medicamento a = new Medicamento (res.getInt("codigo"),res.getString("nombre"),res.getDouble("stock"),res.getDouble("stock_min"), res.getString("unidad"),res.getDate("vencimiento"));
                 medicamentos.add(a);
-                //System.out.println(a.getCodigo());
             }
         }catch (Exception ex){
             System.err.println("Error al cargar Medicamentos");
@@ -39,9 +37,6 @@ public class ControlMedicamentos {
             insertStmt.setDouble(4, elem.getStock_min());
             insertStmt.setString(5, elem.getUnidad());
             java.sql.Date d = java.sql.Date.valueOf((elem.getVencimiento().getYear()+1900)+"-"+(elem.getVencimiento().getMonth()+1)+"-"+elem.getVencimiento().getDate());;
-//            d.setDate(elem.getVencimiento().getDate());
-//            d.setMonth(elem.getVencimiento().getMonth());
-//            d.setYear(elem.getVencimiento().getYear());
             insertStmt.setDate(6, d);
             conexion.finalizarInsercion(insertStmt);
             isOk = true;
@@ -78,7 +73,6 @@ public class ControlMedicamentos {
         return elem;
     }
 
-    // Ver
     public boolean actualizar(Medicamento elem){
         boolean isOk = false;
         try{
@@ -111,7 +105,6 @@ public class ControlMedicamentos {
             System.err.println("Error al eliminar Medicamento");
             ex.printStackTrace();
         }finally{
-
             return isOk;
         }
     }
