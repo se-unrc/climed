@@ -1,0 +1,9 @@
+Para utilizar la conexion se necesita el DRIVER postgresql-9.1-901.jdbc3.jar
+Se puede descargar de: http://jdbc.postgresql.org/download.html
+
+Para importarlo a nuestro proyecto:
+
+Botón derecho sobre la carpeta de nuestro proyecto -> Build Patch -> Add External Archives -> 
+se les abre una ventana, buscan la ubicación de donde se encuentra el archivo postgresql-9.1-901.jdbc3.jar
+y seleccionan el archivo, aceptan y van a ver que tienen un nuevo icono que dice conexion postgres, 
+si lo extienden va a ver que agregaron el driver “postgresql-9.1-901.jdbc3.jar”.

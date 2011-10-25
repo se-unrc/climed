@@ -6,3 +6,16 @@ create TABLE  convenio (
   cobertura float NOT NULL,
   Constraint pkConvenio PRIMARY KEY (medico,obra_social)
  ) ;
+
+
+drop TABLE if EXISTS Medicamento;
+CREATE TABLE Medicamento (
+    id bigint NOT NULL,
+    nombre text,
+    stock double precision,
+    stock_min double precision,
+    vencimiento date,
+    unidad text,
+    CONSTRAINT pkCodigo PRIMARY KEY (id)
+);
+
