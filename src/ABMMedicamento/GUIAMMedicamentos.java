@@ -1,4 +1,4 @@
-package medicamentos;
+package AVMMedicamento;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;

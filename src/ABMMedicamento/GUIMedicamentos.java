@@ -1,4 +1,4 @@
-package medicamentos;
+package ABMMedicamento;
 
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
@@ -14,8 +14,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jButtonCerrar = new javax.swing.JButton();
@@ -30,20 +28,15 @@ public class GUIMedicamentos extends javax.swing.JFrame {
         jTextFieldCodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
-        jButtonVer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Close16.png"))); // NOI18N
         jButtonCerrar.setText("Cerrar");
 
-        jButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/File_add16.png"))); // NOI18N
         jButtonAgregar.setText("Agregar");
 
-        jButtonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/File_edit16.png"))); // NOI18N
         jButtonModificar.setText("Modificar");
 
-        jButtonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/File_delete16.png"))); // NOI18N
         jButtonEliminar.setText("Eliminar");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -61,9 +54,8 @@ public class GUIMedicamentos extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
-        jLabel1.setText("Código");
+        jLabel1.setText("Codigo");
 
-        jButtonRestaurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Refresh16.png"))); // NOI18N
         jButtonRestaurar.setText("Restaurar");
 
         jLabel2.setText("Nombre");
@@ -80,7 +72,7 @@ public class GUIMedicamentos extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addComponent(jButtonRestaurar)
                 .addContainerGap())
         );
@@ -97,9 +89,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jButtonVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/File_info16.png"))); // NOI18N
-        jButtonVer.setText("Ver");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,8 +98,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonVer)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonModificar)
@@ -133,13 +120,12 @@ public class GUIMedicamentos extends javax.swing.JFrame {
                     .addComponent(jButtonCerrar)
                     .addComponent(jButtonAgregar)
                     .addComponent(jButtonModificar)
-                    .addComponent(jButtonEliminar)
-                    .addComponent(jButtonVer))
+                    .addComponent(jButtonEliminar))
                 .addContainerGap())
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     public void setActionListeners(ActionListener lis){
         this.getjButtonAgregar().addActionListener(lis);
@@ -147,7 +133,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
         this.getjButtonEliminar().addActionListener(lis);
         this.getjButtonModificar().addActionListener(lis);
         this.getjButtonRestaurar().addActionListener(lis);
-        this.getjButtonVer().addActionListener(lis);
     }
     
     public void setKeyListeners(KeyListener lis){
@@ -155,13 +140,11 @@ public class GUIMedicamentos extends javax.swing.JFrame {
         this.getjTextFieldNombre().addKeyListener(lis);
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonModificar;
     private javax.swing.JButton jButtonRestaurar;
-    private javax.swing.JButton jButtonVer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -169,7 +152,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextFieldCodigo;
     private javax.swing.JTextField jTextFieldNombre;
-    // End of variables declaration//GEN-END:variables
 
     public javax.swing.JButton getjButtonAgregar() {
         return jButtonAgregar;
@@ -189,10 +171,6 @@ public class GUIMedicamentos extends javax.swing.JFrame {
 
     public javax.swing.JButton getjButtonRestaurar() {
         return jButtonRestaurar;
-    }
-
-    public javax.swing.JButton getjButtonVer() {
-        return jButtonVer;
     }
 
     public javax.swing.JTable getjTable() {

@@ -1,4 +1,4 @@
-package medicamentos;
+package ABMMedicamento;
 
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
