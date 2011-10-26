@@ -1,9 +1,10 @@
 package ABMMedicamento;
 
-import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Vector;
-import Dominio.*;
+import Dominio.Medicamento;
+import Conexion.*;
 
 /**
  * @author grupo1
@@ -14,7 +15,7 @@ public class ControlMedicamentos {
 
     public Vector<Medicamento> getAll(){
         Vector<Medicamento> medicamentos = new Vector();
-        ResultSet res = conexion.ejecutarSentencia("Select * from climed.medicamento");
+        ResultSet res = conexion.ejecutarSentencia("Select * from medicamento");
         try {
             while (res.next()){
                 Medicamento a = new Medicamento (res.getInt("codigo"),res.getString("nombre"),res.getDouble("stock"),res.getDouble("stock_min"), res.getString("unidad"),res.getDate("vencimiento"));
@@ -31,7 +32,7 @@ public class ControlMedicamentos {
         boolean isOk = false;
         try{
             String [] columnas = {"codigo","nombre","stock","stock_min","unidad","vencimiento"};
-            PreparedStatement insertStmt = conexion.prepararParaInsertar("climed.medicamento",columnas);
+            PreparedStatement insertStmt = conexion.prepararParaInsertar("medicamento",columnas);
             insertStmt.setInt(1,elem.getCodigo());
             insertStmt.setString(2, elem.getNombre());
             insertStmt.setDouble(3, elem.getStock());
@@ -45,7 +46,6 @@ public class ControlMedicamentos {
             System.err.println("Error al Insertar Medicamento");
             ex.printStackTrace();
         }finally{
-            
             return isOk;
         }
     }
@@ -81,7 +81,7 @@ public class ControlMedicamentos {
             int mes = elem.getVencimiento().getMonth()+1;
             int dia = elem.getVencimiento().getDate();
             String fecha = ano+"-"+mes+"-"+dia;
-            conexion.editar("UPDATE climed.medicamento SET nombre = '"+ elem.getNombre()+
+            conexion.editar("UPDATE medicamento SET nombre = '"+ elem.getNombre()+
                     "', stock = "+ elem.getStock()+
                     ", stock_min = "+ elem.getStock_min()+
                     ", unidad = '"+ elem.getUnidad()+
@@ -92,7 +92,6 @@ public class ControlMedicamentos {
             System.err.println("Error al Actualizar Medicamento");
             ex.printStackTrace();
         }finally{
-            
             return isOk;
         }
     }
@@ -100,7 +99,7 @@ public class ControlMedicamentos {
     public boolean deleteItem(Medicamento a){
         boolean isOk = false;
         try{
-            conexion.eliminarValor("climed.medicamento", "codigo", a.getCodigo()+"");
+            conexion.eliminarValor("medicamento", "codigo", a.getCodigo()+"");
             isOk = true;
         }catch(Exception ex){
             System.err.println("Error al eliminar Medicamento");

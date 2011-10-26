@@ -35,7 +35,7 @@ public class GUIAMMedicamentos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("C�digo");
+        jLabel1.setText("Codigo");
 
         jLabel2.setText("Nombre");
 
