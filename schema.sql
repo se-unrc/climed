@@ -12,12 +12,13 @@ CREATE TABLE  convenio (
 
 DROP TABLE if EXISTS ObraSocial;
 CREATE TABLE  ObraSocial (
-  numero integer NOT NULL ,
+  id integer NOT NULL,
   nombre varchar(30) NOT NULL,
   direccion varchar(50) NOT NULL,
   telefono varchar(25) NOT NULL,
   cuit varchar(13) NOT NULL,
-  CONSTRAINT pkObraSocial PRIMARY KEY (numero)
+  CONSTRAINT pkObraSocial PRIMARY KEY (id),
+  CONSTRAINT uNombre UNIQUE (nombre)
 );
 
 
