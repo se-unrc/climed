@@ -6,9 +6,9 @@ import javax.swing.JButton;
 public class Mediador implements ActionListener{
 
 	private Cartel gui = new Cartel();
-	private Mediador_CartelAltas med_altas;
-	private Mediador_CartelBajas med_bajas;
-	private Mediador_CartelModif med_modif;
+	private MediadorCartelAltas med_altas;
+	private MediadorCartelBajas med_bajas;
+	private MediadorCartelModif med_modif;
 
 	public Mediador(){
 		gui.addActionListener(this);
@@ -24,16 +24,12 @@ public class Mediador implements ActionListener{
 
 	private void ListenerEvent(String event){
 		if(event.compareTo("BAJA")==0){
-			System.out.println("Bajaaaaa");
-			med_bajas = new Mediador_CartelBajas();
+			med_bajas = new MediadorCartelBajas();
 		} else if(event.compareTo("ALTA")==0){
-			System.out.println("Altaaaaa");
-			med_altas = new Mediador_CartelAltas();
+			med_altas = new MediadorCartelAltas();
 		} else if(event.compareTo("MODIFICACION")==0){
-			System.out.println("Modificaciooooon");
-			med_modif = new Mediador_CartelModif();
+			med_modif = new MediadorCartelModif();
 		} else if(event.compareTo("Salir")==0){
-			System.out.println("Cerrandooooo");
 			System.exit(0);
 		}
 	}	

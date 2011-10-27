@@ -15,6 +15,7 @@
  */
 
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class CartelBajas extends javax.swing.JFrame {
 
@@ -51,7 +52,7 @@ public class CartelBajas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel1.setText("BAJA");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel());
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -129,5 +130,11 @@ public class CartelBajas extends javax.swing.JFrame {
 		jButton1.addActionListener(lis);
 		jButton2.addActionListener(lis);
 	}
+    
+    public void agregarDatos(LinkedList nombres){
+    	for (int i = 0; i < nombres.size(); i++){
+    		jComboBox1.addItem(nombres.get(i));
+    	}
+    }
 
 }
