@@ -1,6 +1,5 @@
-package AVMMedicamento;
+package ABMMedicamento;
 
-import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 
 /**
@@ -35,7 +34,7 @@ public class GUIAMMedicamentos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Código");
+        jLabel1.setText("Cï¿½digo");
 
         jLabel2.setText("Nombre");
 
