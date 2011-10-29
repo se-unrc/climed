@@ -30,7 +30,9 @@ public class ConsultaMedica {
 	}
 
 	public int getIdMedico() {
-		return(idMedico);
+		// ToDo: HardCode idMedico until get Medico ABM working
+		// return(idMedico);
+		return 1;
 	}
 
 	public int getIdPaciente() {
@@ -38,7 +40,9 @@ public class ConsultaMedica {
 	}
 
 	public String getFecha() {
-		return(fecha);
+		// @ToDo: Dejar la fecha en el formate que puse debajo
+		// return(fecha.replace('/', '-'));
+		return "2011-12-12";
 	}
 
 	public String getDiagnostico() {

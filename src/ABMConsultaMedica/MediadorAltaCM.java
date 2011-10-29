@@ -66,24 +66,27 @@ public class MediadorAltaCM implements ActionListener {
 	}
 
 	public boolean datosCorrectos(String id, String nomCol, String nomTabla) throws SQLException {
-		try {
-			ConsultaMedica as = new ConsultaMedica();
-			ControlConsultaMedica asd = new ControlConsultaMedica("medico",1,as);
-			boolean resultado = asd.existe(id, nomCol, nomTabla);
-			if(!resultado){
-				System.out.println("VERDADERO");
-			}
-			if (!resultado) {
-				return(false);
-			}
-			else {
-				return(true);
-			}
-		}
-		catch (Exception e) {
-			System.out.println("Error al verificar existencia.\n"+ e);
-			return(false);
-		}
+		// @ToDo
+		// Comentado hasta que se pueda verificar si el médico existe
+		return true;
+		//		try {
+		//			ConsultaMedica as = new ConsultaMedica();
+		//			ControlConsultaMedica asd = new ControlConsultaMedica("medico",1,as);
+		//			boolean resultado = asd.existe(id, nomCol, nomTabla);
+		//			if(!resultado){
+		//				System.out.println("VERDADERO");
+		//			}
+		//			if (!resultado) {
+		//				return(false);
+		//			}
+		//			else {
+		//				return(true);
+		//			}
+		//		}
+		//		catch (Exception e) {
+		//			System.out.println("Error al verificar existencia.\n"+ e);
+		//			return(false);
+		//		}
 	}
 
 }
