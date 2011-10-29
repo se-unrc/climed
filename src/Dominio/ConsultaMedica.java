@@ -1,7 +1,8 @@
-package consultaMedica;
+package Dominio;
 
 import java.sql.SQLException;
-import java.util.Date;
+
+import ABMConsultaMedica.ControlConsultaMedica;
 
 public class ConsultaMedica {
 	private static int cantAtributos = 5;
