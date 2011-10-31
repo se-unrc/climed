@@ -1,12 +1,14 @@
 package Dominio;
 
 public class Convenio {
-	private String medico = "";
-	private String obraSocial = "";
-	private float cobertura = 0;
 	
-	
-	public Convenio(String medico, String obraSocial, float cobertura){
+	private int nro;
+	private String medico;
+	private String obraSocial;
+	private float cobertura;
+
+	public Convenio(int nro, String medico, String obraSocial, float cobertura){
+		this.nro = nro;
 		this.medico = medico;
 		this.obraSocial = obraSocial;
 		this.cobertura = cobertura;
@@ -20,6 +22,16 @@ public class Convenio {
 
 	public void setMedico(String medico) {
 		this.medico = medico;
+	}
+
+
+	public int getNro() {
+		return nro;
+	}
+
+
+	public void setNro(int nro) {
+		this.nro = nro;
 	}
 
 
