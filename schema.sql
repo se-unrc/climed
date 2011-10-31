@@ -33,3 +33,15 @@ CREATE TABLE consulta(
   CONSTRAINT pkconsulta PRIMARY KEY (id)
 )
 
+CREATE SEQUENCE seq_id_dieta;
+DROP TABLE IF EXISTS dieat;
+CREATE TABLE dieat(
+  id integer NOT NULL DEFAULT nextval('seq_id_dieta'),
+  codigo integer NOT NULL,
+  deayuno varchar(50),
+  almuerzo varchar(50),
+  merienda  varchar(50),
+  cena varchar(50),
+  CONSTRAINT pkconsulta PRIMARY KEY (id)
+)
+
