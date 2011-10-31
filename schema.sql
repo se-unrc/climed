@@ -56,3 +56,13 @@ CREATE TABLE dieat(
   cena varchar(50),
   CONSTRAINT pkconsulta PRIMARY KEY (id)
 )
+
+CREATE SEQUENCE seq_id_habitacion;
+DROP TABLE IF EXISTS habitacion;
+CREATE TABLE habitacion(
+  id integer NOT NULL DEFAULT nextval('seq_id_consulta'),
+  nroHabitacion integer,
+  fecha date,
+  nroPiso integer,
+  CONSTRAINT pkhabitacion PRIMARY KEY (id)
+)
