@@ -1,14 +1,13 @@
-import ABMConsultaMedica.MediadorConsulta;
-
-
 public class Main {
-
+	
 	public static void main(String args[]) {
-		System.out.println("hola mundo");
-		@SuppressWarnings("unused")
-		// Mediador_Principal med = new Mediador_Principal();
-
-		MediadorConsulta inicio = new MediadorConsulta();
+		try{
+			@SuppressWarnings("unused")
+			Mediador_Principal med = new Mediador_Principal();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
