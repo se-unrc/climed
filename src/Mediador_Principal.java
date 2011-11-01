@@ -4,10 +4,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class Mediador_Principal implements ActionListener{
-
 	private Principal gui = new Principal();
 
-	
 	public Mediador_Principal(){
 		gui.addActionListener(this);
 		gui.setVisible(true);
@@ -19,13 +17,10 @@ public class Mediador_Principal implements ActionListener{
 		  ListenerEvent(((JButton) obj).getName());
 	}
 	
-	
+
 	private void ListenerEvent(String event){
 		if(event.compareTo("Ingresar")==0){
-			System.out.println("Holaaaaa");
+			new MediadorMenu(gui);
 		}
-	}	
-	
-
-
+	}
 }
