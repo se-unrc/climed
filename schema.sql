@@ -22,10 +22,9 @@ CREATE TABLE  ObraSocial (
 );
 
 
-CREATE SEQUENCE seq_id_medicamento;
 DROP TABLE IF EXISTS medicamento;
 CREATE TABLE medicamento (
-    id bigint NOT NULL DEFAULT nextval('seq_id_medicamento'),
+    id bigint NOT NULL,
     nombre text,
     stock double precision,
     stock_min double precision,
