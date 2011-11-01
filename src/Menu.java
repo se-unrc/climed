@@ -12,6 +12,7 @@ public class Menu extends javax.swing.JFrame {
 	private javax.swing.JButton botonABMConvenio = new javax.swing.JButton();;
 	private javax.swing.JButton botonABMConsulta = new javax.swing.JButton();;
 	private javax.swing.JButton botonSalir = new javax.swing.JButton();;
+	private javax.swing.JButton botonABMObraSocial = new javax.swing.JButton();;
 
 	public Menu() {
         initComponents();
@@ -29,6 +30,9 @@ public class Menu extends javax.swing.JFrame {
         botonABMConvenio.setName("ABMConvenio");
         botonABMConsulta.setText("Administrar Consultas");
         botonABMConsulta.setName("ABMConsulta");
+        
+        botonABMObraSocial.setText("Administrar Obras sociales");
+        botonABMObraSocial.setName("ABMObraSocial");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -44,6 +48,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(149, Short.MAX_VALUE)
                 .addComponent(botonABMConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(botonABMConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonABMObraSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
         );
@@ -54,6 +59,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonABMConvenio)
                 .addComponent(botonABMConsulta)
+                .addComponent(botonABMObraSocial)
                 .addComponent(botonSalir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -64,6 +70,7 @@ public class Menu extends javax.swing.JFrame {
 	public void addActionListener(ActionListener lis){
 		botonABMConvenio.addActionListener(lis);
 		botonABMConsulta.addActionListener(lis);
+		botonABMObraSocial.addActionListener(lis);
 	}
 
 }

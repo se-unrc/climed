@@ -14,6 +14,8 @@
  * @author Mathi
  */
 
+package ABMObraSocial;
+
 import java.awt.event.ActionListener;
 
 public class Cartel extends javax.swing.JFrame {

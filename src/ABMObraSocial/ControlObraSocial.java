@@ -1,7 +1,12 @@
-import java.sql.*;
+package ABMObraSocial;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
 
-import javax.swing.JOptionPane;
+import Conexion.Conexion;
 
 public class ControlObraSocial {
 	private Connection con;

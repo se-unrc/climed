@@ -1,16 +1,18 @@
+package ABMObraSocial;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class Mediador implements ActionListener{
+public class MediadorObraSocial implements ActionListener{
 
 	private Cartel gui = new Cartel();
 	private MediadorCartelAltas med_altas;
 	private MediadorCartelBajas med_bajas;
 	private MediadorCartelModif med_modif;
 
-	public Mediador(){
+	public MediadorObraSocial(){
 		gui.addActionListener(this);
 		gui.setVisible(true);
 	}

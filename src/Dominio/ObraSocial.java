@@ -1,3 +1,4 @@
+package Dominio;
 
 public class ObraSocial {
 	private int numero;
