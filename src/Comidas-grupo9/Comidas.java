@@ -1,3 +1,7 @@
+/**
+ * @author grupo 9
+ */
+ 
 public class Comidas{
 	
 	private String nombre;
@@ -12,7 +16,15 @@ public class Comidas{
 		return nombre;
 	}
 	
-	public String getDescipcion(){
+	public String getDescripcion(){
 		return descripcion;
+	}
+	
+	public void setNombre(String x){
+		nombre=x;
+	}
+	
+	public void setDescripcion(String x){
+		descripcion=x;
 	}
 }
