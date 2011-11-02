@@ -32,7 +32,7 @@ public class MediadorObraSocial implements ActionListener{
 		} else if(event.compareTo("MODIFICACION")==0){
 			med_modif = new MediadorCartelModif();
 		} else if(event.compareTo("Salir")==0){
-			System.exit(0);
+			gui.dispose();
 		}
 	}	
 
