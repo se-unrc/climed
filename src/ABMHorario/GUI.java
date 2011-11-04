@@ -8,7 +8,7 @@
  *
  * Created on 26/10/2011, 10:05:27
  */
-package Propio;
+package ABMHorario;
 
 import java.awt.event.ActionListener;
 

@@ -1,7 +1,9 @@
-package Propio;
+package ABMHorario;
 
 import java.sql.*;
 import java.util.Collection;
+
+import Dominio.Horario;
 
 public class ControlHorario{
 	

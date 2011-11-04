@@ -1,4 +1,4 @@
-package Propio;
+package Dominio;
 
 public class Horario {
 	

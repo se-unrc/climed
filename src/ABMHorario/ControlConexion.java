@@ -1,8 +1,14 @@
-package Propio;
+package ABMHorario;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Collection;
 import java.util.HashSet;
+
+import Conexion.Conexion;
+import Dominio.Horario;
 
 public class ControlConexion{
 	PreparedStatement stmt = null;
