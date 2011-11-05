@@ -1,4 +1,4 @@
-package gui;
+package ABMPersona;
 
 import java.awt.Dimension;
 import java.awt.event.ActionListener;

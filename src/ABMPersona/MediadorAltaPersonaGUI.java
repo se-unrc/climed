@@ -1,9 +1,10 @@
-package principal;
+package ABMPersona;
 
-import gui.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 import Conexion.ControlConexion;
 

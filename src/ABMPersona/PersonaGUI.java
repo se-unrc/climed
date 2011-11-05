@@ -1,8 +1,13 @@
-package gui;
+package ABMPersona;
 
 import java.awt.Dimension;
 import javax.swing.*;
 import javax.swing.table.JTableHeader;
+
+import Dominio.Administrativo;
+import Dominio.Enfermeras;
+import Dominio.Medicos;
+import Dominio.Pacientes;
 
 import java.awt.event.*;
 
@@ -101,14 +106,14 @@ public class PersonaGUI extends JPanel {
     	jTable.setVisible(false);
     	jTableHeader.setVisible(false);
     	if (seleccion == 0) {
-        	jTable = new TablaPacientes();
+        	jTable = new Pacientes();
         } else if (seleccion == 1) {
-        	jTable = new TablaAdministrativo();
+        	jTable = new Administrativo();
         	repaint();
         } else if (seleccion == 2) {
-        	jTable = new TablaEnfermeras();
+        	jTable = new Enfermeras();
         } else if (seleccion == 3) {
-        	jTable = new TablaMedicos();
+        	jTable = new Medicos();
         }
         jTable.setName("tabla");
         jTable.setBounds(25, 95, 950, 490);

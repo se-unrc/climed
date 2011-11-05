@@ -1,4 +1,4 @@
-package gui;
+package ABMPersona;
 
 public class ModificarPersonaGUI extends AltaPersonaGUI{
 	

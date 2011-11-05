@@ -1,12 +1,11 @@
 /**
  * 
  */
-package principal;
-
-import gui.VentanaPrincipalGUI;
+package ABMPersona;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 /**

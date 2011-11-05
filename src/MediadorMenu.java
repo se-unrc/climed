@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import ABMConsultaMedica.MediadorConsulta;
 import ABMConvenio.MediadorABMConvenio;
 import ABMObraSocial.MediadorObraSocial;
+import ABMPersona.MediadorPersonaGUI;
 
 
 public class MediadorMenu  implements ActionListener {
@@ -35,6 +36,8 @@ public class MediadorMenu  implements ActionListener {
 			new MediadorConsulta();
 		} else if (event.compareTo("ABMObraSocial")==0){			
 			new MediadorObraSocial();
+		} else if (event.compareTo("ABMPersona")== 0){
+			new MediadorPersonaGUI();
 		}
 	}
 }

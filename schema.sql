@@ -1,8 +1,6 @@
-CREATE SEQUENCE seq_id_convenio;
-DROP TABLE IF EXISTS convenio;
+--DROP TABLE IF EXISTS convenio;
 CREATE TABLE  convenio (
-  id integer NOT NULL DEFAULT NEXTVAL('seq_id_convenio'),
-  nro_convenio serial NOT NULL ,
+  id serial,
   medico varchar(30) NOT NULL,
   obra_social varchar(30) NOT NULL,
   cobertura float NOT NULL,
@@ -10,7 +8,7 @@ CREATE TABLE  convenio (
 );
 
 
-DROP TABLE if EXISTS ObraSocial;
+--DROP TABLE if EXISTS ObraSocial;
 CREATE TABLE  ObraSocial (
   id integer NOT NULL,
   nombre varchar(30) NOT NULL,
@@ -22,7 +20,7 @@ CREATE TABLE  ObraSocial (
 );
 
 
-DROP TABLE IF EXISTS medicamento;
+--DROP TABLE IF EXISTS medicamento;
 CREATE TABLE medicamento (
     id bigint NOT NULL,
     nombre text,
@@ -33,36 +31,54 @@ CREATE TABLE medicamento (
     CONSTRAINT pkCodigo PRIMARY KEY (id)
 );
 
-CREATE SEQUENCE seq_id_consulta;
-DROP TABLE IF EXISTS consulta;
+--DROP TABLE IF EXISTS consulta;
 CREATE TABLE consulta(
-  id integer NOT NULL DEFAULT nextval('seq_id_consulta'),
+  id serial,
   idMedico integer NOT NULL,
   idPaciente integer NOT NULL,
   fecha date NOT NULL,
   diagnostico character varying(200),
   CONSTRAINT pkconsulta PRIMARY KEY (id)
-)
+);
 
 
-CREATE SEQUENCE seq_id_dieta;
-DROP TABLE IF EXISTS dieat;
-CREATE TABLE dieat(
-  id integer NOT NULL DEFAULT nextval('seq_id_dieta'),
+--DROP TABLE IF EXISTS dieta;
+CREATE TABLE dieta(
+  id serial,
   codigo integer NOT NULL,
   deayuno varchar(50),
   almuerzo varchar(50),
   merienda  varchar(50),
   cena varchar(50),
-  CONSTRAINT pkconsulta PRIMARY KEY (id)
-)
+  CONSTRAINT pkdieta PRIMARY KEY (id)
+);
 
-CREATE SEQUENCE seq_id_habitacion;
-DROP TABLE IF EXISTS habitacion;
+--DROP TABLE IF EXISTS habitacion;
 CREATE TABLE habitacion(
-  id integer NOT NULL DEFAULT nextval('seq_id_consulta'),
+  id serial,
   nroHabitacion integer,
   fecha date,
   nroPiso integer,
   CONSTRAINT pkhabitacion PRIMARY KEY (id)
-)
+);
+
+--DROP DOMAIN IF EXISTS Tcategoria;
+CREATE DOMAIN Tcategoria AS int
+        DEFAULT 0
+        CHECK (value > -1 and value < 4);
+
+--DROP TABLE IF EXISTS persona;
+CREATE TABLE persona(
+        identificador SERIAL,
+        ocupacion VarChar(30),
+        nombre VarChar(30),
+        apellido VarChar(30),
+        dni VarChar(11),
+        direccion VarChar(50),
+        telefono VarChar(30),
+        categoria Tcategoria,
+        horasExtras int default 0,
+        especialidad VarChar(30),
+        borrado boolean default false,
+        PRIMARY KEY (identificador)
+);

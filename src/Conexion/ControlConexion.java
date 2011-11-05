@@ -28,6 +28,28 @@ public class ControlConexion {
         return res;
     }
 
+    public DefaultTableModel ejecutarSentencia(String sentencia, String[] nombres){
+    	DefaultTableModel modelo = null;
+    	try {
+    		Statement sent = Conexion.getInstancia().createStatement();
+    		ResultSet res = sent.executeQuery(sentencia);
+    		String[] titulos = nombres;
+    		Object[][] datos = {};
+    		modelo = new DefaultTableModel(datos, titulos);
+    		while (res.next()){
+    			Object[] fila = new Object[nombres.length];
+    			for (int i = 0; i < nombres.length; i++){
+    				fila[i] = res.getObject(nombres[i]);
+    			}
+    			modelo.addRow(fila);
+    		}
+    	}
+    	catch (Exception ex){
+    		ex.printStackTrace();
+    	}
+    	return modelo;
+    }
+    
     /**
      * Metodo para editar contenido
      * @param update Sentencia SQL pura (Ej. "UPDATE medidamentos set nombre = 'Paracetamol' where id = 10")
