@@ -1,8 +1,11 @@
 package ABMMedicamento;
 
-import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Vector;
+
+import Conexion.ControlConexion;
+import Dominio.Medicamento;
 
 /**
  * @author grupo1
