@@ -82,3 +82,28 @@ CREATE TABLE persona(
         borrado boolean default false,
         PRIMARY KEY (identificador)
 );
+
+--DROP TABLE IF EXISTS especialidad;
+CREATE TABLE  especialidad (
+   NOMBRE varchar(30),	
+   ID_ESPECIALIDAD varchar(30),
+   PRIMARY KEY (ID_ESPECIALIDAD)
+);
+
+--DROP TABLE IF EXISTS matricula;
+CREATE TABLE  matricula (
+   NUMERO_MATRICULA varchar(30),
+   ID_MEDICO varchar(30),	
+   ID_ESPECIALIDAD varchar(30),
+   FECHA_DE_OBTENCION varchar(30) NOT NULL,
+   PRIMARY KEY (NUMERO_MATRICULA)
+);
+
+BEGIN;
+
+INSERT INTO Especialidad (NOMBRE, ID_ESPECIALIDAD) VALUES
+('Traumatologia','1'),
+('Cardiología', '2'),
+('Pediatría', '3');
+
+COMMIT;
