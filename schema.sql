@@ -1,5 +1,8 @@
---DROP TABLE IF EXISTS convenio;
-CREATE TABLE  convenio (
+﻿--DROP SCHEMA IF EXISTS climed;
+--CREATE SCHEMA climed;
+
+--DROP TABLE IF EXISTS climed.convenio;
+CREATE TABLE  climed.convenio (
   id serial,
   medico varchar(30) NOT NULL,
   obra_social varchar(30) NOT NULL,
@@ -8,8 +11,8 @@ CREATE TABLE  convenio (
 );
 
 
---DROP TABLE if EXISTS ObraSocial;
-CREATE TABLE  ObraSocial (
+--DROP TABLE if EXISTS climed.ObraSocial;
+CREATE TABLE  climed.ObraSocial (
   id integer NOT NULL,
   nombre varchar(30) NOT NULL,
   direccion varchar(50) NOT NULL,
@@ -20,8 +23,8 @@ CREATE TABLE  ObraSocial (
 );
 
 
---DROP TABLE IF EXISTS medicamento;
-CREATE TABLE medicamento (
+--DROP TABLE IF EXISTS climed.medicamento;
+CREATE TABLE climed.medicamento (
     id bigint NOT NULL,
     nombre text,
     stock double precision,
@@ -31,8 +34,8 @@ CREATE TABLE medicamento (
     CONSTRAINT pkCodigo PRIMARY KEY (id)
 );
 
---DROP TABLE IF EXISTS consulta;
-CREATE TABLE consulta(
+--DROP TABLE IF EXISTS climed.consulta;
+CREATE TABLE climed.consulta(
   id serial,
   idMedico integer NOT NULL,
   idPaciente integer NOT NULL,
@@ -42,8 +45,8 @@ CREATE TABLE consulta(
 );
 
 
---DROP TABLE IF EXISTS dieta;
-CREATE TABLE dieta(
+--DROP TABLE IF EXISTS climed.dieta;
+CREATE TABLE climed.dieta(
   id serial,
   codigo integer NOT NULL,
   deayuno varchar(50),
@@ -53,8 +56,8 @@ CREATE TABLE dieta(
   CONSTRAINT pkdieta PRIMARY KEY (id)
 );
 
---DROP TABLE IF EXISTS habitacion;
-CREATE TABLE habitacion(
+--DROP TABLE IF EXISTS climed.habitacion;
+CREATE TABLE climed.habitacion(
   id serial,
   nroHabitacion integer,
   fecha date,
@@ -62,13 +65,13 @@ CREATE TABLE habitacion(
   CONSTRAINT pkhabitacion PRIMARY KEY (id)
 );
 
---DROP DOMAIN IF EXISTS Tcategoria;
-CREATE DOMAIN Tcategoria AS int
+--DROP DOMAIN IF EXISTS climed.Tcategoria;
+CREATE DOMAIN climed.Tcategoria AS int
         DEFAULT 0
         CHECK (value > -1 and value < 4);
 
---DROP TABLE IF EXISTS persona;
-CREATE TABLE persona(
+--DROP TABLE IF EXISTS climed.persona;
+CREATE TABLE climed.persona(
         identificador SERIAL,
         ocupacion VarChar(30),
         nombre VarChar(30),
@@ -76,22 +79,21 @@ CREATE TABLE persona(
         dni VarChar(11),
         direccion VarChar(50),
         telefono VarChar(30),
-        categoria Tcategoria,
+        categoria climed.Tcategoria,
         horasExtras int default 0,
         especialidad VarChar(30),
         borrado boolean default false,
         PRIMARY KEY (identificador)
 );
 
---DROP TABLE IF EXISTS especialidad;
-CREATE TABLE  especialidad (
+--DROP TABLE IF EXISTS climed.especialidad;
+CREATE TABLE  climed.especialidad (
    NOMBRE varchar(30),	
    ID_ESPECIALIDAD varchar(30),
    PRIMARY KEY (ID_ESPECIALIDAD)
 );
-
---DROP TABLE IF EXISTS matricula;
-CREATE TABLE  matricula (
+--DROP TABLE IF EXISTS climed.matricula;
+CREATE TABLE  climed.matricula (
    NUMERO_MATRICULA varchar(30),
    ID_MEDICO varchar(30),	
    ID_ESPECIALIDAD varchar(30),
@@ -101,7 +103,7 @@ CREATE TABLE  matricula (
 
 BEGIN;
 
-INSERT INTO Especialidad (NOMBRE, ID_ESPECIALIDAD) VALUES
+INSERT INTO climed.especialidad (NOMBRE, ID_ESPECIALIDAD) VALUES
 ('Traumatologia','1'),
 ('Cardiología', '2'),
 ('Pediatría', '3');

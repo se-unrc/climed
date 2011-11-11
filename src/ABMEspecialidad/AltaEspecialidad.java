@@ -2,6 +2,8 @@ package ABMEspecialidad;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import Dominio.Especialidad;
+
 import java.sql.*;
 
 public class AltaEspecialidad extends JFrame{
@@ -10,6 +12,7 @@ public class AltaEspecialidad extends JFrame{
 	private javax.swing.JButton botonVolver,actualizarLista,botonInsertar;	
 	private ListaEspecialidad lista;
 	private Container contenedor;
+	private Especialidad objEspecialidad;
 
 	public AltaEspecialidad() {
 		super( "Alta especialidad" );
@@ -105,18 +108,15 @@ public class AltaEspecialidad extends JFrame{
 	
     // clase interna privada para el manejo de eventos
 	private class ManejadorCampoTexto implements ActionListener {
-		String nombreEspecialidad = "";
-		String id_especialidad = "";
 		// metodo para procesar eventos de campo de texto      
 		public void actionPerformed( ActionEvent evento ) {
 			boolean found=true;
 			boolean found2=true;	
 			if(evento.getActionCommand() == "Insertar") {
-				nombreEspecialidad = ingNombre.getText();
-				id_especialidad = ingidEspecialidad.getText();
-				if(!(esCampoVacio(nombreEspecialidad,ingNombre))){
+				objEspecialidad = new Especialidad(ingNombre.getText(),ingidEspecialidad.getText());
+				if(!(esCampoVacio(objEspecialidad.getNombre(),ingNombre))){
 					try{
-						found = existeComp(nombreEspecialidad,"SELECT NOMBRE FROM climed.especialidad");
+						found = existeComp(objEspecialidad.getNombre(),"SELECT NOMBRE FROM climed.especialidad");
 					}catch (Exception ex){
 						ex.printStackTrace();
 					}
@@ -125,9 +125,9 @@ public class AltaEspecialidad extends JFrame{
 						ingNombre.setEditable(true);
 					}
 				}
-				if (!(esCampoVacio(id_especialidad,ingidEspecialidad))){
+				if (!(esCampoVacio(objEspecialidad.getId(),ingidEspecialidad))){
 					try{
-						found2 = existeComp(id_especialidad,"SELECT ID_ESPECIALIDAD FROM climed.especialidad");
+						found2 = existeComp(objEspecialidad.getId(),"SELECT ID_ESPECIALIDAD FROM climed.especialidad");
 					}catch (Exception ex){
 						ex.printStackTrace();
 					}	
@@ -142,8 +142,8 @@ public class AltaEspecialidad extends JFrame{
 						String[] columnas = {"nombre", "id_especialidad"};
 						PreparedStatement insertar = conexion.prepararParaInsertar("climed.especialidad", columnas);
 						try {
-							insertar.setString(1, nombreEspecialidad);
-							insertar.setString(2, id_especialidad);
+							insertar.setString(1, objEspecialidad.getNombre());
+							insertar.setString(2, objEspecialidad.getId());
 							conexion.finalizarInsercion(insertar);
 							ingidEspecialidad.setText("");
 							ingNombre.setText("");

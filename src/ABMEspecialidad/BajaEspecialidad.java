@@ -79,14 +79,13 @@ public class BajaEspecialidad extends JFrame{
     }
 	
 	// clase interna privada para el manejo de eventos
-	private class ManejadorCampoTexto implements ActionListener {
-        
+	private class ManejadorCampoTexto implements ActionListener {        
 		// procesar eventos de campo de texto
 		public void actionPerformed( ActionEvent evento ) {
 			String id_especialidad = "";
 			boolean found = false;
 			if ( evento.getSource() == ingEspecialidad ){
-				id_especialidad = evento.getActionCommand();
+				id_especialidad = evento.getActionCommand();				
 				if (id_especialidad.equals("")) {
 					JOptionPane.showMessageDialog(rootPane,"Ingrese un valor valido.");
 				} else {

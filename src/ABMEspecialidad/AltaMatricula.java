@@ -3,7 +3,7 @@ package ABMEspecialidad;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+import Dominio.Matricula;
 import java.sql.*;
 import java.util.Calendar;
 
@@ -14,6 +14,7 @@ public class AltaMatricula extends JFrame{
 	private com.toedter.calendar.JCalendar cal;
 	private ListaMatricula lista;
 	private Container contenedor;
+	private Matricula objMatricula;
 	
 	public AltaMatricula() {
 		super( "Alta Matricula" );
@@ -127,42 +128,53 @@ public class AltaMatricula extends JFrame{
 	
     // clase interna privada para el manejo de eventos
 	private class ManejadorCampoTexto implements ActionListener {		
-		String numero_matricula = "";
-		String id_medico = "";
-		String id_especialidad = "";
+		//String numero_matricula = "";
+		//String id_medico = "";
+		//String id_especialidad = "";
 		String fechaMatricula = "";
 		//Date fecha = new java.sql.Date(11,8,4);
 		// procesar eventos de campo de texto
 		public void actionPerformed( ActionEvent evento ) {	    
 			boolean found = false;
+			boolean existeEspecialidad = false;
 			if(evento.getActionCommand() == "Insertar") {
-				numero_matricula = ingMatricula.getText();
-				id_medico = ingIdDoctor.getText();
-				id_especialidad = ingIdEspecialidad.getText();
-				if(!(esCampoVacio(numero_matricula,ingMatricula))){
+				fechaMatricula+=cal.getCalendar().get(Calendar.DAY_OF_MONTH)+
+						"-"+(1+cal.getCalendar().get(Calendar.MONTH))+
+						"-"+cal.getCalendar().get(Calendar.YEAR);
+				
+				objMatricula = new Matricula(ingMatricula.getText(),ingIdDoctor.getText(),ingIdEspecialidad.getText(),fechaMatricula);				
+				if(!(esCampoVacio(objMatricula.getNumero(),ingMatricula))){
 					try{
-						found = existeComp(numero_matricula,"SELECT numero_matricula FROM climed.Matricula");
+						found = existeComp(objMatricula.getNumero(),"SELECT numero_matricula FROM climed.Matricula");
 					}catch (Exception ex){
 						ex.printStackTrace();
 					}
 					if (found) {
 						JOptionPane.showMessageDialog(rootPane,"Ya existe una especialidad con ese nombre");
 						ingMatricula.setEditable(true);
-					}
+					}					
 				}
-				if (!found && !esCampoVacio(id_medico,ingIdDoctor) && !esCampoVacio(id_especialidad,ingIdEspecialidad)) {
+				if(!(esCampoVacio(objMatricula.getIdEspecialidad(),ingIdEspecialidad))){
+					try{
+						existeEspecialidad = existeComp (objMatricula.getIdEspecialidad(),"SELECT id_especialidad FROM climed.especialidad");
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+					if (!existeEspecialidad) {
+						JOptionPane.showMessageDialog(rootPane,"No existe una especialidad con ese numero");
+						ingIdEspecialidad.setEditable(true);
+					}	
+				}
+				if (!found && !esCampoVacio(objMatricula.getIdMedico(),ingIdDoctor) && !esCampoVacio(objMatricula.getIdEspecialidad(),ingIdEspecialidad) && existeEspecialidad) {
 					int respuesta = (JOptionPane.showConfirmDialog(rootPane, "Esta Seguro De Realizar La Insercion", "Confirmacion", 0));
-					if (respuesta == 0) {
-						fechaMatricula+=cal.getCalendar().get(Calendar.DAY_OF_MONTH)+
-						"-"+(1+cal.getCalendar().get(Calendar.MONTH))+
-						"-"+cal.getCalendar().get(Calendar.YEAR);
+					if (respuesta == 0) {						
 						String[] columnas = {"numero_matricula", "id_medico", "id_especialidad", "fecha_de_obtencion"};
 				        PreparedStatement insertar = conexion.prepararParaInsertar("climed.matricula", columnas);
 				        try {
-				        	insertar.setString(1, numero_matricula);
-				        	insertar.setString(2, id_medico);
-				        	insertar.setString(3, id_especialidad);
-				        	insertar.setString(4, fechaMatricula);
+				        	insertar.setString(1, objMatricula.getNumero());
+				        	insertar.setString(2, objMatricula.getIdMedico());
+				        	insertar.setString(3, objMatricula.getIdEspecialidad());
+				        	insertar.setString(4, objMatricula.getFechaObtencion());
 				        	conexion.finalizarInsercion(insertar);
 				        	ingMatricula.setText("");
 							ingIdDoctor.setText("");
