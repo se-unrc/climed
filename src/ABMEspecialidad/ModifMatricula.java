@@ -139,6 +139,7 @@ public class ModifMatricula extends JFrame{
         String id_especialidadNueva = "";
         String fechaMatricula = "";
         boolean found = false;
+        boolean existeEspecialidad = false;
 		// procesar eventos de campo de texto
         public void actionPerformed( ActionEvent evento ) {
 			int respuesta = 1;
@@ -194,9 +195,23 @@ public class ModifMatricula extends JFrame{
 			}
 			if(evento.getSource() == ingNuevaEsp) {
 				id_especialidadNueva = evento.getActionCommand();
-				if (id_especialidadNueva.equals("")) {
-					JOptionPane.showMessageDialog(rootPane,"Ingrese un valor valido.");
-				} else {
+				boolean noEsCampoVacio = !(id_especialidadNueva.equals(""));
+				if(noEsCampoVacio){
+					try{
+						existeEspecialidad = existeComp (id_especialidadNueva,"SELECT id_especialidad FROM climed.especialidad");
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+					if (!existeEspecialidad) {
+						JOptionPane.showMessageDialog(rootPane,"No existe una especialidad con ese numero");
+						ingNuevaEsp.setEditable(true);
+					}	
+				}
+				boolean vacio = id_especialidadNueva.equals("");
+				if (vacio) {
+					JOptionPane.showMessageDialog(rootPane,"Ingrese un valor valido.");				
+				}
+				if (!vacio && noEsCampoVacio && existeEspecialidad){
 					respuesta = (JOptionPane.showConfirmDialog(rootPane, "Ingreso: " +id_especialidadNueva+ "     ¿Quiere confirmar el cambio?", "Confirmacion", 0));
 					if (respuesta == 0) {                   
 						ingNuevaEsp.setEditable(false);                    
