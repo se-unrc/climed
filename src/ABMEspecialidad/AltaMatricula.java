@@ -1,11 +1,21 @@
 
 package ABMEspecialidad;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import Dominio.Matricula;
-import java.sql.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import Dominio.Matricula;
 
 public class AltaMatricula extends JFrame{
 	public Conexion.ControlConexion conexion = new Conexion.ControlConexion();
