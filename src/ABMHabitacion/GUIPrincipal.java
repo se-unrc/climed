@@ -93,17 +93,17 @@ public class GUIPrincipal extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-		MediadorPrincipal mediadorPrincipal =new MediadorPrincipal();
+		MediadorPrincipalHabitacion mediadorPrincipal =new MediadorPrincipalHabitacion();
 		mediadorPrincipal.insertarHabitacion();
 	}//GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-		MediadorPrincipal mediadorPrincipal = new MediadorPrincipal();
+		MediadorPrincipalHabitacion mediadorPrincipal = new MediadorPrincipalHabitacion();
 		mediadorPrincipal.modificarHabitacion();
 	}//GEN-LAST:event_jButton2ActionPerformed
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-		MediadorPrincipal mediadorPrincipal= new MediadorPrincipal();
+		MediadorPrincipalHabitacion mediadorPrincipal= new MediadorPrincipalHabitacion();
 		mediadorPrincipal.eliminarHabitacion();
 	}//GEN-LAST:event_jButton3ActionPerformed
 
