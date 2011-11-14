@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import ABMConsultaMedica.MediadorConsulta;
 import ABMConvenio.MediadorABMConvenio;
 import ABMDieta.MediadorMenuPrincipal;
-import ABMEspecialidad.MediadorEspecialidad;
+import ABMEspecialidad.MediadorPrincipalEspecialidad;
 import ABMHabitacion.MediadorPrincipalHabitacion;
 import ABMHorario.MediadorPrincipal;
 import ABMMedicamento.MediadorMedicamentos;
@@ -45,7 +45,7 @@ public class MediadorMenu  implements ActionListener {
 		} else if (event.compareTo("ABMDieta")== 0){
 			new MediadorMenuPrincipal();
 		} else if (event.compareTo("ABMEspecialidad")== 0){
-			new MediadorEspecialidad();
+			new MediadorPrincipalEspecialidad();
 		} else if (event.compareTo("ABMHabitacion")== 0){
 			MediadorPrincipalHabitacion mediador = new MediadorPrincipalHabitacion();
 			mediador.mostrarGuiMenuPrincipal();
