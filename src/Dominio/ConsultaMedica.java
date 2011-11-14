@@ -32,7 +32,7 @@ public class ConsultaMedica {
 	public int getIdMedico() {
 		// ToDo: HardCode idMedico until get Medico ABM working
 		// return(idMedico);
-		return 1;
+		return (idMedico);//Ahora almacena el dni del Medico que realiza la consulta
 	}
 
 	public int getIdPaciente() {

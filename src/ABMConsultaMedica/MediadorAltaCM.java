@@ -30,12 +30,13 @@ public class MediadorAltaCM implements ActionListener {
 		if (source == guiAMCM.getJBGrabar()) {         
 			try{
 				String idPaciente = this.guiAMCM.getJTFIdPaciente().getText();
-				String idMedico = this.guiAMCM.getJTFIdMedico().getText();
-				if (!datosCorrectos(idMedico,"idMedico","medico")) {
+				String dniMedico = this.guiAMCM.getJTFIdMedico().getText();
+				System.out.println(dniMedico);
+				if (!datosCorrectos(dniMedico,"dni","persona")) { //Se cambio donde decia tabla medico que no existia por la tabla persona y tambien el idMedico por dni que es el que utiliza
 					JOptionPane.showMessageDialog(new JFrame(),"No existe medico con ese DNI.","",JOptionPane.ERROR_MESSAGE);
 				} 
 				else {               
-					if (!datosCorrectos(idPaciente,"idPaciente","paciente")){
+					if (!datosCorrectos(idPaciente,"dni","persona")){
 						JOptionPane.showMessageDialog(new JFrame(),"No existe paciente con ese DNI.","",JOptionPane.ERROR_MESSAGE);
 					} 
 					else {    	
@@ -43,7 +44,7 @@ public class MediadorAltaCM implements ActionListener {
 						String fecha = this.guiAMCM.getJTFFecha().getText();
 						String diagnostico = this.guiAMCM.getJTFDiagnostico().getText();
 						int auxIdPaciente = Integer.parseInt(idPaciente);
-						int auxIdMedico = Integer.parseInt(idMedico);
+						int auxIdMedico = Integer.parseInt(dniMedico);
 						System.out.println(diagnostico+auxIdPaciente+fecha+auxIdMedico);
 						ConsultaMedica alta= new ConsultaMedica();
 						alta.setIdMedico(auxIdMedico);
@@ -68,25 +69,22 @@ public class MediadorAltaCM implements ActionListener {
 	public boolean datosCorrectos(String id, String nomCol, String nomTabla) throws SQLException {
 		// @ToDo
 		// Comentado hasta que se pueda verificar si el médico existe
-		return true;
-		//		try {
-		//			ConsultaMedica as = new ConsultaMedica();
-		//			ControlConsultaMedica asd = new ControlConsultaMedica("medico",1,as);
-		//			boolean resultado = asd.existe(id, nomCol, nomTabla);
-		//			if(!resultado){
-		//				System.out.println("VERDADERO");
-		//			}
-		//			if (!resultado) {
-		//				return(false);
-		//			}
-		//			else {
-		//				return(true);
-		//			}
-		//		}
-		//		catch (Exception e) {
-		//			System.out.println("Error al verificar existencia.\n"+ e);
-		//			return(false);
-		//		}
+		//return true;
+		try {
+			ConsultaMedica as = new ConsultaMedica();
+			ControlConsultaMedica asd = new ControlConsultaMedica("persona",1,as);
+			boolean resultado = asd.existe(id, nomCol, nomTabla);
+			if (!resultado) {
+				return(false);
+			}
+			else {
+				return(true);
+			}
+		}
+		catch (Exception e) {
+			System.out.println("Error al verificar existencia.\n"+ e);
+			return(false);
+		}
 	}
 
 }

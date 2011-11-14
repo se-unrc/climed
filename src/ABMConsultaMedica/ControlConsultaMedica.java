@@ -108,7 +108,7 @@ public class ControlConsultaMedica {
 
 	public boolean existe(String valor,String nomColum,String nomTabla) throws SQLException {
 		try {
-			String consulta = "SELECT * FROM " + nomTabla + " WHERE " + nomColum + "=" + valor;
+			String consulta = "SELECT * FROM "+nomTabla +" WHERE "+nomColum+" = '"+valor+"';";
 			tabla = instruccion.executeQuery(consulta);
 		}
 		catch (SQLException e) {
