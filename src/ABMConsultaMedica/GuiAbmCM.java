@@ -41,7 +41,7 @@ public class GuiAbmCM extends javax.swing.JFrame {
 		Buscar = new javax.swing.JButton();
 		Baja = new javax.swing.JButton();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setTitle("ABM Consulta Médica");
 
 		jlMjeAUsuario.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N

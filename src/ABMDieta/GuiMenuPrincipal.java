@@ -35,7 +35,7 @@ public class GuiMenuPrincipal extends javax.swing.JFrame {
         jButtonBaja = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Form"); // NOI18N
 
         jPanel1.setName("jPanel1"); // NOI18N

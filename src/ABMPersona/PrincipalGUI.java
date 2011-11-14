@@ -17,7 +17,7 @@ public class PrincipalGUI extends JFrame {
 	private void initComponents() {
 		
 		// Setup the window		
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setTitle("ABMPersonas");
 
 		// Create the panel

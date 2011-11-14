@@ -10,8 +10,8 @@ public class Conexion {
 	private static final String driver = "org.postgresql.Driver";
 	private final String url = "jdbc:postgresql://localhost:5432";
 	private final String bd = "climed_bd";
-	private final String usuario = "climed";
-	private final String password = "climed";
+	private final String usuario = "postgres";
+	private final String password = "root";
 	private static Connection conexion;
 	private String baseDeDatos = url + "/" + bd;
 	private final String urlBDPostgres = url+"/postgres";
