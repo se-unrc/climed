@@ -1,0 +1,27 @@
+Nuestra elección está basada en los siguientes artículos:
+
+- es.wikipedia.org/wiki/Licencia_de_software
+- www.informatica.us.es/~ramon/articulos/LicenciasSoftware.pdf
+- www.gnu.org/licenses/license-list.es.html
+
+
+La licencia que más se adecua a las ideas de los integrantes de este grupo es GNU GPL (GNU General Public License). Básicamente, 
+es una licencia para software libre con un copyleft fuerte. Es la licencia más usada y recomendada para software libre dado que es 
+la más conveniente en la mayoría de los casos.
+
+
+Los puntos que más destacamos de esta licencia son:
+
+- Permite la ejecución, copia, redistribución y modificación del software (siempre que no se añada ninguna clase de restricción a
+posteriori).
+
+- Exige que todas las versiones modificadas y extendidas del mismo sean también libres (evita el riesgo de tener que competir con 
+una versión modificada privativa de nuestro propio trabajo).
+
+- Al tener copyleft fuerte no permite que el software se enlace con módulos no libres (esta combinación acabaría siendo 
+inevitablemente no libre; las libertades suprimidas en la parte no libre del programa afectarán a éste en su totalidad).
+
+En conclusión, consideramos que es la licencia dentro del software libre que más protege las convicciones del desarrollador original. 
+
+
+GRUPO 6: Jesús Castelli - Mariano Ontivero - Nahuel Pardo
