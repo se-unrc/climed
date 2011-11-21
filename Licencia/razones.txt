@@ -1,0 +1,13 @@
+Razones por las que elegimos GNU GLP v3.
+
+- Permite que cualquier persona use, copie y distribuya nuestro codigo,
+siempre y cuando se respeten las condiciones citadas por la licencia.
+- Reglamentacion de condicionamiento de libertad de terceros.
+- Limitacion de responsabilidad. Especifica que la persona que lo usa es
+responsable por el uso que le da, desligando al autor del codigo.
+- Aclaracion de la ausencia de garantia
+
+Grupo 2
+- Borgogno, Dan.
+- Bottero, Mathias.
+- Fiandrino, Ignacio.
